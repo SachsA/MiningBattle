@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfec2ae8927a054b90846a49b2eb0de, type: 3}
+  m_Name: MiniMapTile
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 1
+  blockSprites:
+  - {fileID: 21300000, guid: 3c9d73649a9ea2b4d9e0c60ce0b8cbde, type: 3}
+  - {fileID: 21300000, guid: 20ebd749b0d1f4441b560a965a2b7834, type: 3}
+  - {fileID: 21300000, guid: addb388a7f2f5d6439cb34db50ddcf7b, type: 3}
+  - {fileID: 21300000, guid: b1862d5a7e0e02046bee71fdda8b8718, type: 3}
+  - {fileID: 21300000, guid: cbb153ab7c3e2c64291545be641b331c, type: 3}
+  - {fileID: 21300000, guid: 9fa38a0ceef2fbc4996fd2f7c4b0652f, type: 3}
+  - {fileID: 21300000, guid: 0cf0e033f8897664ba61bb3fa9128c45, type: 3}

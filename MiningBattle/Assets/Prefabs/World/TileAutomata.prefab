@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7478346701036759571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7478346701036759568}
+  - component: {fileID: 7478346701036759569}
+  - component: {fileID: 7478346701036759575}
+  m_Layer: 0
+  m_Name: TileAutomata
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7478346701036759568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7478346701036759571}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7478346701036759569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7478346701036759571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f42ec75efd38b42bc595ffac4503d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorldSize: {x: 700, y: 700}
+  RockRadius: 119
+  DiamondRadius: 19
+  DaeguniumRadius: 5
+  smooth: 0.9
+  Background: {fileID: 0}
+  CameraControl: {fileID: 0}
+  SpaceshipManager: {fileID: 0}
+  RockTile: {fileID: 11400000, guid: 2bfbd63f6bb45a24e88b32a67b459acd, type: 2}
+  MineableTile: {fileID: 11400000, guid: 034b21562ccac814dafef381b2d70c87, type: 2}
+  DiamondTile: {fileID: 11400000, guid: b4834cae8514bea4488cc9246fec39ee, type: 2}
+  DaeguniumTile: {fileID: 11400000, guid: 13cf4e33fe4f82d45b9a3321f7e71ff2, type: 2}
+  IronTile: {fileID: 11400000, guid: 9ecb3605fdca20c4fa42b8f51e1dd419, type: 2}
+  GoldTile: {fileID: 11400000, guid: 89671bdecfedbd2448c9efd4f6632ead, type: 2}
+  CopperTile: {fileID: 11400000, guid: 6c946a354ac13c04481a526c68c6a9df, type: 2}
+  AstroRock: {fileID: 0}
+  AstroOre: {fileID: 0}
+  AstroMineable: {fileID: 0}
+--- !u!114 &7478346701036759575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7478346701036759571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 7478346701036759569}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
