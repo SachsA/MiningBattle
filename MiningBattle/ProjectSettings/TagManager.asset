@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Spaceship
+  - FOV
+  - Mining
+  - Attack
+  - Defence
+  - FOA
+  - CommandCenter
+  - EnemySpaceship
+  - Rocket
+  - MinimapIcon
+  - EnemyRocket
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Obstacle
+  - Spaceships
+  - tilemap-back
+  - tilemap-front
+  - tilemap-middle
+  - CommandCenter
+  - FieldOfUpdate
+  - Background
+  - Ground
+  - MiniMap
+  - EnemySpaceship
+  - Rocket
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: tilemap-back
+    uniqueID: 421692505
+    locked: 0
+  - name: tilemap-middle
+    uniqueID: 3368839541
+    locked: 0
+  - name: tilemap-front
+    uniqueID: 822022297
+    locked: 0
+  - name: Light-mask
+    uniqueID: 2130216771
+    locked: 0
+  - name: Spaceship
+    uniqueID: 3309856717
+    locked: 0
