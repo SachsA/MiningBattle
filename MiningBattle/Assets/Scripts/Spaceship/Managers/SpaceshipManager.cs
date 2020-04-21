@@ -123,6 +123,7 @@ public class SpaceshipManager : MonoBehaviour
                 {
                     spaceship = Instantiate(attackSpaceship, position, rotation, transform);
                 }
+
                 _mySpaceships.Add(spaceship);
                 _myAttackSpaceships.Add(spaceship);
                 WinCondition.Instance.myAnalytics.attackBuilt += 1;
@@ -137,6 +138,7 @@ public class SpaceshipManager : MonoBehaviour
                 {
                     spaceship = Instantiate(defenceSpaceship, position, rotation, transform);
                 }
+
                 _mySpaceships.Add(spaceship);
                 _myDefenceSpaceships.Add(spaceship);
                 WinCondition.Instance.myAnalytics.defenceBuilt += 1;
@@ -151,6 +153,7 @@ public class SpaceshipManager : MonoBehaviour
                 {
                     spaceship = Instantiate(miningSpaceship, position, rotation, transform);
                 }
+
                 _mySpaceships.Add(spaceship);
                 _myMiningSpaceships.Add(spaceship);
                 WinCondition.Instance.myAnalytics.minerBuilt += 1;
@@ -248,7 +251,9 @@ public class SpaceshipManager : MonoBehaviour
 
     public float GetClosestMinerFromDaegunium()
     {
-        _myMiningSpaceships.Sort((v1, v2) => (v1.transform.position - _daeguniumPosition).sqrMagnitude.CompareTo((v2.transform.position - _daeguniumPosition).sqrMagnitude));
+        _myMiningSpaceships.Sort((v1, v2) =>
+            (v1.transform.position - _daeguniumPosition).sqrMagnitude.CompareTo(
+                (v2.transform.position - _daeguniumPosition).sqrMagnitude));
 
         if (_myMiningSpaceships.Count > 0)
             return (_myMiningSpaceships[0].transform.position - _daeguniumPosition).magnitude;

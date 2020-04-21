@@ -58,9 +58,10 @@ public class Spaceship : Seeker
 
 
     private float _lastCheck = 0;
+
     private void Update()
     {
-        _spaceshipPosition.x = transform.position.x ;
+        _spaceshipPosition.x = transform.position.x;
         _spaceshipPosition.y = transform.position.y;
 
         Vector2Int positionIndex = World.Instance.getTileIndex(transform.position.x, transform.position.y);
@@ -77,7 +78,7 @@ public class Spaceship : Seeker
             updateSeen = true;
             _lastCheck = 0;
         }
-        
+
         if (_lastTile != currentTile || updateSeen)
         {
             FOG.Instance.UnSeeTiles(_seenTiles);
@@ -101,6 +102,7 @@ public class Spaceship : Seeker
                 }
             }
         }
+
         _lastTile = currentTile;
     }
 
@@ -157,8 +159,9 @@ public class Spaceship : Seeker
                 {
                     nbTiles++;
                 }
-            }        
+            }
         }
+
         _seenTiles = new Vector2[nbTiles];
         if (_miner != null)
             _miner.InitializeTilesMineable(nbTiles);
@@ -168,7 +171,6 @@ public class Spaceship : Seeker
 
     private void FindTilesInFOV()
     {
-      
         int radius = FieldOfView;
         int i = 0;
         for (int x = -radius; x < radius; x++)
@@ -184,21 +186,22 @@ public class Spaceship : Seeker
                 }
             }
         }
+
         Array.Sort(_seenTiles, compareToTarget);
     }
 
     private int compareToTarget(Vector2 a, Vector2 b)
     {
-        float da = (a - (Vector2)transform.position).magnitude;
-        float db = (b - (Vector2)transform.position).magnitude;
- 
+        float da = (a - (Vector2) transform.position).magnitude;
+        float db = (b - (Vector2) transform.position).magnitude;
+
         if (da < db)
             return -1;
         else if (db < da)
             return 1;
         return 0;
     }
-    
+
     private void OnDestroy()
     {
         FOG.Instance.UnSeeTiles(_seenTiles);
@@ -263,7 +266,7 @@ public class Spaceship : Seeker
 
         if (eventCode == EventCodeTouched)
         {
-            string spaceshipId = (string)photonEvent.CustomData;
+            string spaceshipId = (string) photonEvent.CustomData;
             if (GetComponent<NetworkIdentity>()._id != spaceshipId)
                 return;
             Touched();

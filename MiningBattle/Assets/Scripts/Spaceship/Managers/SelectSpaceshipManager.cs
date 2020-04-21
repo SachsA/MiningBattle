@@ -16,13 +16,13 @@ public class SelectSpaceshipManager : MonoBehaviour
     }
 
     private KeyPressedSelection _keyPressedSelection;
-    
+
     private float _sizeX;
     private float _sizeY;
 
     private bool _isCameraNotNull;
     private bool _gameHasStarted;
-    
+
     private Vector3 _startPos;
     private Vector3 _endPos;
     private Vector3 _startMouse;
@@ -96,6 +96,7 @@ public class SelectSpaceshipManager : MonoBehaviour
                 _overUI = true;
                 return;
             }
+
             ClearSelectedSpaceships();
 
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
@@ -126,7 +127,7 @@ public class SelectSpaceshipManager : MonoBehaviour
                 else
                     SelectMultipleSpaceships();
             }
-            
+
             selectSquareImage.sizeDelta = Vector2.zero;
         }
 
@@ -206,7 +207,7 @@ public class SelectSpaceshipManager : MonoBehaviour
     private void SelectOneSpaceship()
     {
         if (!_isCameraNotNull) return;
-        
+
         var entityHit = Physics2D.Raycast(_startPos, Vector2.zero);
 
         if (!entityHit) return;
@@ -228,7 +229,7 @@ public class SelectSpaceshipManager : MonoBehaviour
         _endPos = Input.mousePosition;
 
         _startMouse = _camera.WorldToScreenPoint(_startPos);
-        
+
         var centre = (_startMouse + _endPos) / 2;
 
         selectSquareImage.position = centre;
@@ -254,12 +255,14 @@ public class SelectSpaceshipManager : MonoBehaviour
 
         foreach (Spaceship selectedSpaceship in _selectedSpaceships)
         {
-            if (selectedSpaceship != null && selectedSpaceship.gameObject != null && selectedSpaceship.gameObject.GetComponent<Miner>() != null)
+            if (selectedSpaceship != null && selectedSpaceship.gameObject != null &&
+                selectedSpaceship.gameObject.GetComponent<Miner>() != null)
             {
                 hasMiners = true;
                 break;
             }
         }
+
         if (AutomationButton.activeInHierarchy != hasMiners)
             AutomationButton.SetActive(hasMiners);
     }
@@ -308,24 +311,27 @@ public class SelectSpaceshipManager : MonoBehaviour
                 switch (spaceship.type)
                 {
                     case SpaceshipType.Types.Attack:
-                        PlayerInventory.EarnMoney((int)(BuySpaceships.Instance.attackPrice * 0.5f));
+                        PlayerInventory.EarnMoney((int) (BuySpaceships.Instance.attackPrice * 0.5f));
                         break;
                     case SpaceshipType.Types.Defence:
-                        PlayerInventory.EarnMoney((int)(BuySpaceships.Instance.defencePrice * 0.5f));
+                        PlayerInventory.EarnMoney((int) (BuySpaceships.Instance.defencePrice * 0.5f));
                         break;
                     case SpaceshipType.Types.Mining:
-                        PlayerInventory.EarnMoney((int)(BuySpaceships.Instance.minerPrice * 0.5f));
+                        PlayerInventory.EarnMoney((int) (BuySpaceships.Instance.minerPrice * 0.5f));
                         break;
                 }
+
                 _spaceshipManager.RemoveSpaceship(spaceship.gameObject);
-                                                        toRemove.Add(spaceship);
+                toRemove.Add(spaceship);
             }
         }
 
-        foreach (Spaceship rm in toRemove) {
+        foreach (Spaceship rm in toRemove)
+        {
             _selectedSpaceships.Remove(rm);
             _selectedSeekers.Remove(rm);
         }
+
         toRemove.Clear();
 
         ClearSelectedSpaceships();
